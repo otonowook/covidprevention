@@ -13,7 +13,7 @@ public class Isolated extends AbstractEvent {
 
     private Long id;
     private Long regNmb;
-    private Boolean isolationDt;
+    private Date isolationDt;
 
     public Isolated(IsolationCamp aggregate) {
         super(aggregate);

@@ -27,7 +27,7 @@ public class InfoViewHandler {
             // view 객체 생성
             Info info = new Info();
             // view 객체에 이벤트의 Value 를 set 함
-            info.setRegNmb(String.valueOf(reservePlaced.getRegNmb()));
+            info.setRegNmb(reservePlaced.getRegNmb());
             info.setReserveDt(reservePlaced.getReserveDt());
             info.setReserveId(String.valueOf(reservePlaced.getId()));
             // view 레파지 토리에 save
@@ -44,9 +44,7 @@ public class InfoViewHandler {
         try {
             if (!addedToList.validate()) return;
             // view 객체 조회
-            Optional<Info> infoOptional = infoRepository.findByRegNmb(
-                String.valueOf(addedToList.getRegNmb())
-            );
+            Optional<Info> infoOptional = infoRepository.findById(addedToList.getRegNmb());
 
             if (infoOptional.isPresent()) {
                 Info info = infoOptional.get();
@@ -67,14 +65,12 @@ public class InfoViewHandler {
         try {
             if (!testedOfPositive.validate()) return;
             // view 객체 조회
-            Optional<Info> infoOptional = infoRepository.findByRegNmb(
-                String.valueOf(testedOfPositive.getRegNmb())
-            );
+            Optional<Info> infoOptional = infoRepository.findById(testedOfPositive.getRegNmb());
 
             if (infoOptional.isPresent()) {
                 Info info = infoOptional.get();
                 // view 객체에 이벤트의 eventDirectValue 를 set 함
-                info.setStatus(TRUE);
+                info.setStatus("Insfected");
                 // view 레파지 토리에 save
                 infoRepository.save(info);
             }
@@ -90,14 +86,11 @@ public class InfoViewHandler {
         try {
             if (!testedOfNegative.validate()) return;
             // view 객체 조회
-            Optional<Info> infoOptional = infoRepository.findByRegNmb(
-                String.valueOf(testedOfNegative.getRegNmb())
-            );
-
+            Optional<Info> infoOptional = infoRepository.findById(testedOfNegative.getRegNmb());
             if (infoOptional.isPresent()) {
                 Info info = infoOptional.get();
                 // view 객체에 이벤트의 eventDirectValue 를 set 함
-                info.setStatus(FALSE);
+                info.setStatus("FALSE");
                 // view 레파지 토리에 save
                 infoRepository.save(info);
             }
@@ -111,9 +104,7 @@ public class InfoViewHandler {
         try {
             if (!isolated.validate()) return;
             // view 객체 조회
-            Optional<Info> infoOptional = infoRepository.findByRegNmb(
-                String.valueOf(isolated.getRegNmb())
-            );
+            Optional<Info> infoOptional = infoRepository.findById(isolated.getRegNmb());
 
             if (infoOptional.isPresent()) {
                 Info info = infoOptional.get();
