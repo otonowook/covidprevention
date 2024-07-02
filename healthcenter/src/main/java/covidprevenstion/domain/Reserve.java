@@ -47,6 +47,12 @@ public class Reserve {
 
     //<<< Clean Arch / Port Method
     public static void issueCertificate(TestedOfNegative testedOfNegative) {
+        
+        Reserve reserve = new Reserve();
+        reserve.setStatus(testedOfNegative.getStatus());
+        repository().save(reserve);
+
+        
         //implement business logic here:
 
         /** Example 1:  new item 

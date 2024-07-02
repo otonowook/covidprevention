@@ -109,7 +109,7 @@ public class InfoViewHandler {
             if (infoOptional.isPresent()) {
                 Info info = infoOptional.get();
                 // view 객체에 이벤트의 eventDirectValue 를 set 함
-                info.setIsolateDt(Date.valueOf(isolated.getIsolationDt()));
+                info.setIsolateDt(isolated.getIsolationDt());
                 // view 레파지 토리에 save
                 infoRepository.save(info);
             }
@@ -125,9 +125,7 @@ public class InfoViewHandler {
         try {
             if (!reserveCancelled.validate()) return;
             // view 레파지 토리에 삭제 쿼리
-            infoRepository.deleteById(
-                String.valueOf(reserveCancelled.getRegNmb())
-            );
+            infoRepository.deleteById(reserveCancelled.getRegNmb());
         } catch (Exception e) {
             e.printStackTrace();
         }

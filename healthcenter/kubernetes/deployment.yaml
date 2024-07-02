@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: healthcenter
-          image: "username/healthcenter:latest"
+          image: "879772956301.dkr.ecr.ca-central-1.amazonaws.com/user10-healthcenter:latest"
           ports:
             - containerPort: 8080
           readinessProbe:
