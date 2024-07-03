@@ -20,11 +20,11 @@
     1. 검사소에서 검사를 받지 않을경우 대기인원은 줄지 않는다.  SAGA
 2. 장애격리
     1. 검사소운영시간이 아니더라도 보건소로 검사신청은 365일 24시간 받을 수 있어야 한다  Event driven
+    2. 통신은 비동기로 이루어져야한다.
 3. 성능
     1. 고객이 자신의 검사결과를 확인할 수 있어야 한다  CQRS
-    2. 검사요청에 따른 요청은 카톡 등으로 알림을 줄 수 있어야 한다  Event driven
 4. 기타
-    1. 마이크로서비스는 4개 이상으로 구성한다. v
+    1. 마이크로서비스는 4개 이상으로 구성한다.
     2. API Gateway 패턴으로 개발한다. (단일 진입점)
 
 
@@ -36,31 +36,22 @@
 
 
 
-
 # 운영
-
-## CI/CD 설정
-
-
 
 ### 오토스케일 아웃
 CPU 사용량이 15프로를 넘어서면 replica 를 10개까지 늘려주는 설정을 적용한다. 
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/d1f73c07-29e9-481b-8e9d-0ccf288f7f1d)
 
-
-## 무정지 재배포
-
 ## 구현  
-
-기존의 마이크로 서비스에 수정을 발생시키지 않도록 Inbund 요청을 REST 가 아닌 Event 를 Subscribe 하는 방식으로 구현. 기존 마이크로 서비스에 대하여 아키텍처나 기존 마이크로 서비스들의 데이터베이스 구조와 관계없이 추가됨. 
-
-## 운영과 Retirement
-
-
+policy에 따른 값 저장로직을 추가하였습니다.
 
 ## 운영 - service mesh
 istio를 라벨을 이용하여 네임스페이스에 enable하면 sidecar가 자동으로 붙는다.
 https://github.com/otonowook/covidprevention/assets/152375871/2f21d159-a2f9-452e-84c5-19147cafefb0
+
+## 운영 - monitoring
+kiali를 이용하여 application peformence 모니터링이 가능하다
+![image](https://github.com/otonowook/covidprevention/assets/152375871/43e9a299-86e0-48ad-91d6-bd131214a460)
 
 
 ## 운영 - Pipeline
