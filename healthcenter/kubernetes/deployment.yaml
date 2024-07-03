@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: healthcenter
-          image: "879772956301.dkr.ecr.ca-central-1.amazonaws.com/user10-healthcenter:latest"
+          image: otonowook/healthcenter:240703
           ports:
-            - containerPort: 8080
+            - containerPort: 8086
           readinessProbe:
             httpGet:
               path: '/actuator/health'

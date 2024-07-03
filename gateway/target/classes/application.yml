@@ -1,5 +1,5 @@
 server:
-  port: 8088
+  port: 8085
 
 ---
 
@@ -10,19 +10,19 @@ spring:
 #<<< API Gateway / Routes
       routes:
         - id: healthcenter
-          uri: http://localhost:8082
+          uri: http://localhost:8085
           predicates:
             - Path=/reserves/**, 
         - id: isolationcamp
-          uri: http://localhost:8083
+          uri: http://localhost:8086
           predicates:
             - Path=/isolationCamps/**, 
         - id: deliverycenter
-          uri: http://localhost:8084
+          uri: http://localhost:8083
           predicates:
             - Path=/deliveries/**, 
         - id: citizeninfo
-          uri: http://localhost:8085
+          uri: http://localhost:8082
           predicates:
             - Path=, 
         - id: testingcenter

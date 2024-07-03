@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: citizeninfo
-          image: "username/citizeninfo:latest"
+          image: otonowook/citizeninfo:240703
           ports:
-            - containerPort: 8080
+            - containerPort: 8083
           readinessProbe:
             httpGet:
               path: '/actuator/health'
