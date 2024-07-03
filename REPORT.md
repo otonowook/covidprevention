@@ -45,24 +45,21 @@ efs csi 설정을 적용하였으나 계속해서 pending으로 유지되어 트
 # 운영
 
 ## 셀프힐링
-아래와 같이 적용하였으나 테스트는 못해봄
+아래와 같이 적용하였으나 테스트는 못해봄         
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/70c75d86-a0ba-4127-ac2e-05cdeb7e65d5)
 
 ## 오토스케일 아웃
 CPU 사용량이 15프로를 넘어서면 replica 를 10개까지 늘려주는 설정을 적용한다. 
+kubectl autoscale deployment order --cpu-percent=15 --min=1 --max=10
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/d1f73c07-29e9-481b-8e9d-0ccf288f7f1d)
-
-## 구현  
-policy에 따른 값 저장로직을 추가하였습니다.
 
 ## 운영 - service mesh
 istio를 라벨을 이용하여 네임스페이스에 enable하면 sidecar가 자동으로 붙는다.
-https://github.com/otonowook/covidprevention/assets/152375871/2f21d159-a2f9-452e-84c5-19147cafefb0
+![image](https://github.com/otonowook/covidprevention/assets/152375871/2f21d159-a2f9-452e-84c5-19147cafefb0)
 
 ## 운영 - monitoring
 kiali를 이용하여 application peformence 모니터링이 가능하다
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/43e9a299-86e0-48ad-91d6-bd131214a460)
-
 
 ## 운영 - Pipeline
 github에서 Push하면 
