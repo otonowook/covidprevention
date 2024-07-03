@@ -49,8 +49,8 @@ efs csi 설정을 적용하였으나 계속해서 pending으로 유지되어 트
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/70c75d86-a0ba-4127-ac2e-05cdeb7e65d5)
 
 ## 오토스케일 아웃
-CPU 사용량이 15프로를 넘어서면 replica 를 10개까지 늘려주는 설정을 적용한다. 
-kubectl autoscale deployment order --cpu-percent=15 --min=1 --max=10
+CPU 사용량이 15프로를 넘어서면 replica를 10개까지 늘려주는 설정을 적용한다. 
+kubectl autoscale deployment healthcenter --cpu-percent=15 --min=1 --max=10
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/d1f73c07-29e9-481b-8e9d-0ccf288f7f1d)
 
 ## 운영 - service mesh
