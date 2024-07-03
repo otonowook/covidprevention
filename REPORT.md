@@ -34,11 +34,21 @@
 ## Event Storming 결과
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/e43a765d-aefb-43a5-8ad9-f75fb5925f07)
 
+# 구현
+
+## PV 
+efs csi 설정을 적용하였으나 계속해서 pending으로 유지되어 트러블 슈팅이 필요한 상황
+![image](https://github.com/otonowook/covidprevention/assets/152375871/0562fb31-75d3-4e29-bea8-6d3c0b61cd95)
+
 
 
 # 운영
 
-### 오토스케일 아웃
+## 셀프힐링
+아래와 같이 적용하였으나 테스트는 못해봄
+![image](https://github.com/otonowook/covidprevention/assets/152375871/70c75d86-a0ba-4127-ac2e-05cdeb7e65d5)
+
+## 오토스케일 아웃
 CPU 사용량이 15프로를 넘어서면 replica 를 10개까지 늘려주는 설정을 적용한다. 
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/d1f73c07-29e9-481b-8e9d-0ccf288f7f1d)
 
