@@ -61,6 +61,9 @@ istio를 라벨을 이용하여 네임스페이스에 enable하면 sidecar가 �
 kiali를 이용하여 application peformence 모니터링이 가능하다
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/43e9a299-86e0-48ad-91d6-bd131214a460)
 
+promethus를 이용하면 requests가 몇번있었는지 모니터링이 가능하다
+![image](https://github.com/otonowook/covidprevention/assets/152375871/7d677425-ecdf-48f5-b428-9424b517d1b9)
+
 ## 운영 - Pipeline
 github에서 Push하면 
 ![image](https://github.com/otonowook/covidprevention/assets/152375871/858d350b-65f8-4ae7-ac30-cf7985315d60)
